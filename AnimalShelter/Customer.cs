@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace AnimalShelter
 {
-    class Customer
+    public class Customer
     {
         private string lastName;
         private string firstName;
         private DateTime birthday;
-        private bool isQualified;
+        public bool IsQualified { get; private set; }
         public string Address { get; set; }
         public string Description { get; set; }
 
@@ -29,13 +29,10 @@ namespace AnimalShelter
             set
             {
                 this.birthday = value;
-                this.isQualified = this.Age >= 18;
+                this.IsQualified = this.Age >= 18;
             }
         }
-        public bool IsQualified
-        {
-            get { return this.isQualified; }
-        }
+        
 
 
         public Customer(string firstName, string lastName, DateTime birthday)
