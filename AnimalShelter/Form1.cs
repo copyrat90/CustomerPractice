@@ -16,5 +16,17 @@ namespace AnimalShelter
         {
             InitializeComponent();
         }
+
+        private void CreateCustomer_Click(object sender, EventArgs e)
+        {
+            Customer cus = new Customer("Ian", "Na", new DateTime(1990,1,1));
+            cus.Address = "123 Wilshire Blvd.";
+
+            CusFullNameLabel.Text = cus.FullName;
+            CusAgeLabel.Text = cus.Age.ToString();
+            CusIsQualifiedLabel.Text = cus.IsQualified.ToString();
+            CusAddressLabel.Text = cus.Address;
+            CusDescriptionLabel.Text = cus.Description;
+        }
     }
 }
